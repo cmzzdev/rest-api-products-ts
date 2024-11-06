@@ -24,13 +24,13 @@ router.get(
 router.post(
   "/",
   //validation
-  body("name").notEmpty().withMessage("Product name must be exists").isString(),
+  body("name").notEmpty().withMessage("Product name must be exists"),
 
   body("price")
-    .notEmpty()
-    .withMessage("Price field must be exists")
     .isNumeric()
     .withMessage("Invalid value")
+    .notEmpty()
+    .withMessage("Price field must be exists")
     .custom((value) => value > 0)
     .withMessage("No valid price"),
   handleInputErrors,
@@ -43,10 +43,10 @@ router.put(
   param("id").isInt().withMessage("Id no valid"),
   body("name").notEmpty().withMessage("Product name must be exists").isString(),
   body("price")
-    .notEmpty()
-    .withMessage("Price field must be exists")
     .isNumeric()
     .withMessage("Invalid value")
+    .notEmpty()
+    .withMessage("Price field must be exists")
     .custom((value) => value > 0)
     .withMessage("No valid price"),
   body("availability").isBoolean().withMessage("Invalid value (boolean)"),
