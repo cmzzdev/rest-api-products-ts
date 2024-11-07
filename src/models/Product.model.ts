@@ -1,4 +1,3 @@
-import { Op } from "sequelize";
 import {
   Table,
   Column,
@@ -6,7 +5,6 @@ import {
   DataType,
   Default,
   AllowNull,
-  addAttribute,
 } from "sequelize-typescript";
 
 @Table({
