@@ -4,7 +4,7 @@ dotenv.config();
 
 //?ssl=true at the end of uri connection
 const db = new Sequelize(process.env.DB_URL!, {
-  models: [__dirname + "/../models/**/*.ts"],
+  models: [__dirname + "/../models/**/*"],
   logging: false,
 });
 
